@@ -3,6 +3,8 @@ const exec = require('@actions/exec');
 const common = require('@zaproxy/actions-common-scans');
 const _ = require('lodash');
 
+const LINE = '......................................';
+
 // Default file names
 let jsonReportName = 'report_json.json';
 let mdReportName = 'report_md.md';
@@ -37,7 +39,8 @@ async function run() {
         await exec.exec(`docker pull ${docker_name} -q`);
         let command = (`docker run --user root -v ${workspace}:/zap/wrk/:rw --network="host" ` +
             `-t ${docker_name} zap-full-scan.py -t ${target} -J ${jsonReportName} -w ${mdReportName}  -r ${htmlReportName} ${cmdOptions}`);
-
+        console.log(LINE);
+        console.log(" we made a cpmmand", command);
         if (plugins.length !== 0) {
             command = command + ` -c ${rulesFileLocation}`
         }
