@@ -43,11 +43,11 @@ async function run() {
         console.log(" we made a command", command);
         if (plugins.length !== 0) {
             command = command + ` -c ${rulesFileLocation}`
-            console.log("command plus a c", command);
         }
-
+        console.log("oh here we go towards executing", command);
         try {
             await exec.exec(command);
+            console.log("we ran the command!")
         } catch (err) {
             if (err.toString().includes('exit code 3')) {
                 core.setFailed('failed to scan the target: ' + err.toString());
