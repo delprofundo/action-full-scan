@@ -40,9 +40,10 @@ async function run() {
         let command = (`docker run --user root -v ${workspace}:/zap/wrk/:rw --network="host" ` +
             `-t ${docker_name} zap-full-scan.py -t ${target} -J ${jsonReportName} -w ${mdReportName}  -r ${htmlReportName} ${cmdOptions}`);
         console.log(LINE);
-        console.log(" we made a cpmmand", command);
+        console.log(" we made a command", command);
         if (plugins.length !== 0) {
             command = command + ` -c ${rulesFileLocation}`
+            console.log("command plus a c", command);
         }
 
         try {
