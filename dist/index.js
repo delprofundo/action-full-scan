@@ -3791,7 +3791,7 @@ const common = __webpack_require__(374);
 const _ = __webpack_require__(557);
 
 const LINE = '......................................';
-
+console.log('LINE', LINE)
 // Default file names
 let jsonReportName = 'report_json.json';
 let mdReportName = 'report_md.md';

@@ -4,7 +4,7 @@ const common = require('@zaproxy/actions-common-scans');
 const _ = require('lodash');
 
 const LINE = '......................................';
-
+console.log('LINE', LINE)
 // Default file names
 let jsonReportName = 'report_json.json';
 let mdReportName = 'report_md.md';
