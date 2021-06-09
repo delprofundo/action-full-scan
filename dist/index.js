@@ -85050,6 +85050,9 @@ const tr = __webpack_require__(9);
  */
 function exec(commandLine, args, options) {
     return __awaiter(this, void 0, void 0, function* () {
+        console.log("COMAND LINE", commandLine);
+        console.log("args". args);
+        console.log("options", options);
         const commandArgs = tr.argStringToArray(commandLine);
         if (commandArgs.length === 0) {
             throw new Error(`Parameter 'commandLine' cannot be null or empty.`);
@@ -85058,11 +85061,13 @@ function exec(commandLine, args, options) {
         const toolPath = commandArgs[0];
         args = commandArgs.slice(1).concat(args || []);
         const runner = new tr.ToolRunner(toolPath, args, options);
+        console.log("ARE WE HERE???????????????????????????????????????")
         return runner.exec();
     });
 }
 exports.exec = exec;
 //# sourceMappingURL=exec.js.map
+
 
 /***/ }),
 /* 987 */,
