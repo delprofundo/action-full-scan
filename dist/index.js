@@ -3791,14 +3791,14 @@ const common = __webpack_require__(374);
 const _ = __webpack_require__(557);
 
 const LINE = '......................................';
-console.log('LINE', LINE)
+
 // Default file names
 let jsonReportName = 'report_json.json';
 let mdReportName = 'report_md.md';
 let htmlReportName = 'report_html.html';
 
 async function run() {
-
+    console.log('LINE', LINE)
     try {
         let workspace = process.env.GITHUB_WORKSPACE;
         let currentRunnerID = process.env.GITHUB_RUN_ID;
@@ -3827,13 +3827,14 @@ async function run() {
         let command = (`docker run --user root -v ${workspace}:/zap/wrk/:rw --network="host" ` +
             `-t ${docker_name} zap-full-scan.py -t ${target} -J ${jsonReportName} -w ${mdReportName}  -r ${htmlReportName} ${cmdOptions}`);
         console.log(LINE);
-        console.log(" we made a cpmmand", command);
+        console.log(" we made a command", command);
         if (plugins.length !== 0) {
             command = command + ` -c ${rulesFileLocation}`
         }
-
+        console.log("oh here we go towards executing", command);
         try {
             await exec.exec(command);
+            console.log("we ran the command!")
         } catch (err) {
             if (err.toString().includes('exit code 3')) {
                 core.setFailed('failed to scan the target: ' + err.toString());
