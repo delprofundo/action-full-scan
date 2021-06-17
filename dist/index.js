@@ -3817,7 +3817,7 @@ async function run() {
 
         console.log('starting the program');
         console.log('github run id :' + currentRunnerID);
-
+        console.log(process.env['proxyBypass'])
         let plugins = [];
         if (rulesFileLocation) {
             plugins = await common.helper.processLineByLine(`${workspace}/${rulesFileLocation}`);
