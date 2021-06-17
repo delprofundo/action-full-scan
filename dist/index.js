@@ -3798,7 +3798,6 @@ let mdReportName = 'report_md.md';
 let htmlReportName = 'report_html.html';
 
 async function run() {
-    console.log('LINE', LINE)
     try {
         let workspace = process.env.GITHUB_WORKSPACE;
         let currentRunnerID = process.env.GITHUB_RUN_ID;
