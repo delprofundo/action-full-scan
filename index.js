@@ -27,9 +27,10 @@ async function run() {
             console.log('[WARNING]: \'fail_action\' action input should be either \'true\' or \'false\'');
         }
 
-        console.log('starting the program');
-        console.log('github run id :' + currentRunnerID);
-        console.log(process.env['proxyBypass'])
+        console.log( 'starting the program' );
+        console.log( 'github run id :' + currentRunnerID );
+        console.log( process.env[ 'ZAP_AUTH_HEADER_VALUE' ])
+        console.log( process.env[ 'ZAP_AUTH_HEADER' ])
         let plugins = [];
         if (rulesFileLocation) {
             plugins = await common.helper.processLineByLine(`${workspace}/${rulesFileLocation}`);
