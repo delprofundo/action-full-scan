@@ -1,6 +1,6 @@
 {
   "name": "action-full-scan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "ZAP full scan action",
   "main": "index.js",
   "scripts": {
@@ -38,10 +38,9 @@
   "devDependencies": {
     "@zeit/ncc": "^0.21.1",
     "eslint": "^6.3.0",
-
     "jest": "^24.9.0"
   },
-  "publishConfig" : {
-    "registry" : "https://npm.devops.myqld.developer.qld.gov.au/repository/npm-internal/"
+  "publishConfig": {
+    "registry": "https://npm.devops.myqld.developer.qld.gov.au/repository/npm-internal/"
   }
 }
